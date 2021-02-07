@@ -1,0 +1,22 @@
+# Setting up PHPUnit:
+```
+sudo apt install composer
+composer require --dev phpunit/phpunit ^8
+```
+
+# Set up class composer class autoloading:
+* Add this to composer.json:
+```
+"autoload": {
+    "classmap": [
+        "path/to/class.php"
+    ]
+}
+```
+* To update:
+```
+composer dump-autoload -o
+```
+
+# Run PHPUnit tests:
+* ./vendor/bin/phpunit --testdox path/to/tests.php

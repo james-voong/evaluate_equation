@@ -8,7 +8,11 @@
  *
  * @return int The answer
  */
-function eq(string $exp) : int {
-    eval('$result = ('.$exp.');');
-    return $result;
+namespace Solution1;
+
+class Solution {
+    function eq(string $exp) : int {
+        eval('$result = ('.$exp.');');
+        return $result;
+    }
 }

@@ -39,6 +39,34 @@ class Solution {
     }
 
     /**
+     * Takes an expression, checks if there's any division, and does the divison.
+     *
+     * @param string $exp
+     *
+     * @return int
+     */
+    public static function division(string $exp) : ?int {
+        $result = NULL;
+        $numbers_to_be_divided = explode("/", $exp);
+
+        // The count will be >1 if there is anything to be divided.
+        if (count($numbers_to_be_divided) > 1) {
+            foreach ($numbers_to_be_divided as $key => $number_to_be_divided) {
+
+                // Set the first element and continue, otherwise it will divide against itself.
+                if ($key == 0) {
+                    $result = $number_to_be_divided;
+                    continue;
+                }
+
+                $result = trim($result) / trim($number_to_be_divided);
+            }
+        }
+
+        return $result;
+    }
+
+    /**
      * Check if ready to be evaluated.
      */
     function check($array, $char) {

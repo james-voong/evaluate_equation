@@ -22,7 +22,7 @@ final class DivisionMultiplicationIntegrationTest extends TestCase {
     public function testMultipleDivisionsOneMultiplication() : void {
         $this->assertEquals(
             solution::eq("1000/100/5*6"),
-            6
+            12
         );
     }
 

@@ -3,9 +3,7 @@
 namespace Solution2;
 
 class Solution {
-    function eq(string $exp) : int {
-        static::multiplication($exp);
-
+    public static function eq(string $exp) : int {
 
         return 0;
     }

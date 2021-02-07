@@ -7,13 +7,29 @@ function eq(string $exp) : int {
     return 0;
 }
 
-function multiplication($exp) {
+/**
+ * Takes an expression, checks if there's any multiplication, and does the multiplication.
+ *
+ * @param string $exp
+ *
+ * @return int
+ */
+function multiplication(string $exp) : ?int {
     $result = NULL;
-    $multiplication = explode("*", $exp);
+    $numbers_to_be_multiplied = explode("*", $exp);
 
-    var_dump($multiplication);
-    if (count($multiplication) == 2) {
-        $result = trim($multiplication[0]) * trim($multiplication[1]);
+    // The count will be >1 if there is anything to be multiplied.
+    if (count($numbers_to_be_multiplied) > 1) {
+        foreach ($numbers_to_be_multiplied as $key => $number_to_be_multiplied) {
+
+            // Set the first element and continue, otherwise it will multiply against itself.
+            if ($key == 0) {
+                $result = $number_to_be_multiplied;
+                continue;
+            }
+
+            $result = trim($result) * trim($number_to_be_multiplied);
+        }
     }
 
     return $result;
@@ -45,4 +61,4 @@ $test4 = "8 - 7";
 // echo eq($test4) == 1 ? "Test4 passed" : "Test4 failed. Result " . eq($test4) . "\n";
 
 $mul_test = "3*4*2";
-multiplication($mul_test);
+var_dump(multiplication($mul_test));

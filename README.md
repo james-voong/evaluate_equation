@@ -18,3 +18,6 @@ eq("3+2-4") ➞ 1
 * We are only dealing with positive int values
 * The only operands are + - * / and ()
 * Do not worry about exceeding the memory limit of a long
+
+# Extra difficult challenge
+* Write a solution that does not use eval()
